@@ -1,11 +1,10 @@
-const path = require('path');
-const HtmlWebPackPlugin = require('html-webpack-plugin');
-const StylelintPlugin = require('stylelint-webpack-plugin');
-const ESLintPlugin = require('eslint-webpack-plugin');
+import path from 'path';
+import HtmlWebPackPlugin from 'html-webpack-plugin';
+import ESLintPlugin from 'eslint-webpack-plugin';
 
 // const isMock = process.env.NODE_ENV === 'mock';
-
-module.exports = {
+const __dirname = new URL('.', import.meta.url).pathname;
+export default {
     entry: './index.tsx',
     output: {
         path: path.resolve(__dirname, 'build'),
@@ -62,4 +61,4 @@ module.exports = {
             filename: './index.html',
         }),
     ],
-}
+};

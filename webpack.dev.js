@@ -1,6 +1,6 @@
-const { merge } = require('webpack-merge')
-const commonConfig = require('./webpack.common')
-const ESLintPlugin = require('eslint-webpack-plugin');
+import { merge } from 'webpack-merge';
+import commonConfig from './webpack.common.js';
+import ESLintPlugin from 'eslint-webpack-plugin';
 
 const devConfig = {
     mode: 'development',
@@ -9,7 +9,7 @@ const devConfig = {
         port: process.env.PORT || 8080,
         host: '0.0.0.0',
         historyApiFallback: true,
-        compress: true, //compress the api call
+        compress: true, // Compress the API call
         hot: true,
         // proxy: {
         //     path: '/api/*',
@@ -29,26 +29,29 @@ const devConfig = {
         ],
     },
     module: {
-        rules: [{
-            test: /\.s?css$/,
-            use: [
-                {
-                    loader: 'style-loader',
-                },
-                {
-                    loader: 'css-loader',
-                },
-            ]
-        }]
+        rules: [
+            {
+                test: /\.s?css$/,
+                use: [
+                    {
+                        loader: 'style-loader',
+                    },
+                    {
+                        loader: 'css-loader',
+                    },
+                ],
+            },
+        ],
     },
     plugins: [
         new ESLintPlugin({
+            configType:'flat',
             extensions: ['js', 'jsx', 'ts', 'tsx'],
             fix: true,
             emitError: true,
             failOnError: true,
-        })
-    ]
-}
+        }),
+    ],
+};
 
-module.exports = merge(commonConfig, devConfig)
+export default merge(commonConfig, devConfig);
