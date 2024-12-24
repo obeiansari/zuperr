@@ -15,6 +15,9 @@ const prodConfig = {
                     {
                         loader: 'css-loader',
                     },
+                    {
+                        loader: 'postcss-loader',
+                    },
                 ],
             },
         ],

@@ -1,5 +1,6 @@
 import React, { lazy, Suspense } from 'react'
 import { BrowserRouter as Router } from 'react-router-dom'
+// import '../index.css'
 
 const LoginApp = lazy(async () => await import(/* webpackChunkName: "loginApp" */'./login-app'))
 const BrowseApp = lazy(async () => await import(/* webpackChunkName: "browseApp" */'./browse-app'))

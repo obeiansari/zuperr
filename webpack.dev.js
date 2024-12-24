@@ -39,6 +39,9 @@ const devConfig = {
                     {
                         loader: 'css-loader',
                     },
+                    {
+                        loader: 'postcss-loader',
+                    },
                 ],
             },
         ],
