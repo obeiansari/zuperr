@@ -7,9 +7,9 @@
         "outDir": "./dist",
         "strict": true,
         "esModuleInterop": true,
-        "baseUrl": "./",
+        "baseUrl": ".",
         "paths": {
-            "@*": ["./src/*"],
+            "@/*": ["./*"]
         }
     },
     "include": ["index.tsx", "src/**/*.tsx", "src/**/*.ts"],
