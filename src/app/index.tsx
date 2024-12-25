@@ -1,16 +1,16 @@
-import React, { lazy, Suspense } from 'react'
+import React, { Suspense, lazy } from 'react'
 import { BrowserRouter as Router } from 'react-router-dom'
-// import '../index.css'
 
-const LoginApp = lazy(async () => await import(/* webpackChunkName: "loginApp" */'./login-app'))
-const BrowseApp = lazy(async () => await import(/* webpackChunkName: "browseApp" */'./browse-app'))
+const LoginApp = lazy(() => import('./login-app'))
+const BrowseApp = lazy(() => import('./browse-app'))
 
 const App: React.FC = () => {
   const isUserLoggedIn = !!sessionStorage.getItem('userLoggedIn')
+
   return (
     <Suspense fallback={<div>Loading...</div>}>
       <Router basename="/">
-        { isUserLoggedIn ? <BrowseApp /> : <LoginApp />}
+        {isUserLoggedIn ? <BrowseApp /> : <LoginApp />}
       </Router>
     </Suspense>
   )
