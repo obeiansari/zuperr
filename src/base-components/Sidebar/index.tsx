@@ -10,6 +10,7 @@ import {
   SidebarMenuItem,
 } from '../../../components/ui/sidebar'
 import React from 'react'
+import { NavLink } from 'react-router-dom'
 
 const items = [
   {
@@ -45,10 +46,13 @@ export function AppSidebar() {
               {items.map((item) => (
                 <SidebarMenuItem key={item.title}>
                   <SidebarMenuButton asChild>
-                    <a href={item.url} className="flex items-center py-2 px-4 rounded-md hover:text-white hover:!bg-primary transition-all">
-                      <item.icon size={20} className="mr-3" /> {/* Adjust icon size */}
+                    <NavLink
+                      to={item.url}
+                      className="flex items-center py-2 px-4 rounded-md hover:text-white hover:!bg-primary transition-all"
+                    >
+                      <item.icon size={20} className="mr-3" />
                       <span>{item.title}</span>
-                    </a>
+                    </NavLink>
                   </SidebarMenuButton>
                 </SidebarMenuItem>
               ))}

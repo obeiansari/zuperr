@@ -19,6 +19,7 @@ export default {
             '@config': path.resolve(__dirname, 'src/config'),
             '@base': path.resolve(__dirname, 'src/base'),
             '@components': path.resolve(__dirname, './components'),
+            '@src': path.resolve(__dirname, 'src/'),
         },
     },
     optimization: {

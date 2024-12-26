@@ -2,9 +2,9 @@ import React, { useMemo, useState } from 'react'
 import { useForm } from 'react-hook-form'
 import { NavLink, useNavigate } from 'react-router-dom'
 
-import { Button } from '../../../components/ui/button' // Button import
-import { Card } from '../../../components/ui/card' // Card import
-import { Input } from '../../../components/ui/input' // Input import
+import { Button } from '../../../components/ui/button'
+import { Card } from '../../../components/ui/card'
+import { Input } from '../../../components/ui/input'
 import { ArrowRightToLineIcon } from 'lucide-react'
 import {
   Select,
@@ -41,11 +41,7 @@ const Login: React.FC = () => {
   const [selectedStatus, setSelectedStatus] = useState<Status | null>(null)
 
   const onSubmit = async (data: LoginFormInputs) => {
-    // Store the user login status in sessionStorage
-    sessionStorage.setItem('userLoggedIn', 'true')
-
-    // Redirect to home (BrowseApp) after successful login
-    navigate('/dashboard')
+    navigate('/signin-otp')
   }
 
   const leftPanelContent = useMemo(() => (
@@ -142,7 +138,7 @@ const Login: React.FC = () => {
             Have Trouble Logging In?  <span className="text-[#1877f2] font-bold cursor-pointer">Get help</span>
           </p>
           <p className="text-xs text-center mt-5 text-gray-500">
-            Don`t have an account? <NavLink to={'/signup'}> <span className="text-[#1877f2] font-bold cursor-pointer"> Sign Up </span></NavLink>
+            Don`t have an account? <NavLink replace={true} to={'/signup'}> <span className="text-[#1877f2] font-bold cursor-pointer"> Sign Up </span></NavLink>
           </p>
         </div>
       </div>
