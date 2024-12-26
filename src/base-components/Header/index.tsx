@@ -20,10 +20,9 @@ const Header = () => {
   }
 
   return (
-    <header className="h-[10%] w-full bg-[#1877F2] flex flex-wrap items-center justify-between px-5 box-border relative font-[Poppins]">
+    <header className="h-[10%] w-full bg-[#1877F2] flex items-center justify-between px-5 box-border relative font-[Poppins]">
       {/* Logo */}
       <div className="flex items-center cursor-pointer">
-        {/* <img src={Logo} alt="Zuperr Logo" className="h-7 w-auto" /> */}
         <span className="text-white text-xl font-bold">Zuperr</span>
       </div>
 
@@ -38,8 +37,8 @@ const Header = () => {
       {/* Navigation */}
       <nav
         className={`${
-          isNavOpen ? 'block' : 'hidden'
-        } sm:flex items-center gap-5 flex-wrap min-w-0 w-full sm:w-auto mt-4 sm:mt-0`}
+          isNavOpen ? 'block bg-[#1877F2] p-4 absolute top-full left-0 w-full z-10' : 'hidden'
+        } sm:flex items-center gap-5 flex-wrap w-full sm:w-auto sm:mt-0`}
       >
         {navItems.map((item) => {
           const isActive = activeTab === item.name
@@ -83,16 +82,29 @@ const Header = () => {
             </a>
           )
         })}
+
+        {/* Right Icons in Mobile Navigation */}
+        <div className="flex flex-col sm:hidden gap-4 mt-4">
+          <div className="flex items-center gap-4">
+            <span className="text-white">Location</span>
+          </div>
+          <div className="flex items-center gap-4">
+            <div className="cursor-pointer border border-white rounded-full h-8 w-8 flex justify-center items-center">
+              <User />
+            </div>
+            <div className="cursor-pointer border border-white rounded-full h-8 w-8 flex justify-center items-center">
+              <Settings />
+            </div>
+          </div>
+        </div>
       </nav>
 
-      {/* Right Icons */}
-      <div className="flex items-center gap-4 min-w-0">
-        <span className="hidden sm:block text-white">Location</span>
-
+      {/* Right Icons for Larger Screens */}
+      <div className="hidden sm:flex items-center gap-4 min-w-0">
+        <span className="text-white">Location</span>
         <div className="cursor-pointer border border-white rounded-full h-8 w-8 flex justify-center items-center">
           <User />
         </div>
-
         <div className="cursor-pointer border border-white rounded-full h-8 w-8 flex justify-center items-center">
           <Settings />
         </div>
