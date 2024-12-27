@@ -1,7 +1,7 @@
 import React, { useMemo, useState } from 'react'
-import { Card } from '../../components/ui/card'
-import { Input } from '../../components/ui/input'
-import { Button } from '../../components/ui/button'
+import { Card } from '../../ui/card'
+import { Input } from '../../ui/input'
+import { Button } from '../../ui/button'
 import { NavLink, useNavigate } from 'react-router-dom'
 import { XIcon } from 'lucide-react'
 import { useDispatch } from 'react-redux'
@@ -52,14 +52,26 @@ const OtpConfirmation: React.FC<IOtpConfirmationProps> = ({
 
     if (otpValue === '1234') {
       setError(null)
+      sessionStorage.setItem('userId', '1')
+      sessionStorage.setItem('userType', 'employer')
+      sessionStorage.setItem('sessionLoggedIn', 'true')
+      sessionStorage.setItem('sessionStarted', `${new Date}`)
+
+      console.log('Session Storage:', {
+        userId: sessionStorage.getItem('userId'),
+        userType: sessionStorage.getItem('userType'),
+        sessionLoggedIn: sessionStorage.getItem('sessionLoggedIn'),
+        sessionStarted: sessionStorage.getItem('sessionStarted'),
+      })
       setIsVerified(true)
       dispatch({
         type: '@@app/SET_SESSION',
         payload: {
           userId: '1',
-          userType: 'Recruiter',
+          userType: 'employer',
           sessionLoggedIn: true,
-          sessionStarted: new Date },
+          sessionStarted: new Date,
+        },
       })
       navigate('/')
       alert('OTP Verified Successfully!')

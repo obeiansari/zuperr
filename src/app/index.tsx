@@ -10,7 +10,6 @@ const SignInOtp = lazy(() => import('./login-app/SignInOtp'))
 
 const App: React.FC = () => {
   const sessionInfo = useTypedSelector(state => state.App.sessionInfo)
-
   return (
     <Suspense fallback={<div>Loading...</div>}>
       <Router basename="/">

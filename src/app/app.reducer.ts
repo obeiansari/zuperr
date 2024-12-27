@@ -2,10 +2,10 @@ import { IAppActions, IAppReducerState } from './app.model'
 
 export const initialState: IAppReducerState = {
   sessionInfo: {
-    userId: '',
-    userType: '',
-    sessionLoggedIn: false,
-    sessionStarted: null as Date | null,
+    userId: sessionStorage.getItem('userId') || null,
+    userType: sessionStorage.getItem('userType') || null,
+    sessionLoggedIn: !!sessionStorage.getItem('sessionLoggedIn'),
+    sessionStarted: sessionStorage.getItem('sessionStarted') || null,
   },
 }
 
@@ -19,10 +19,10 @@ export const AppReducer = (
       ...state,
       sessionInfo: {
         ...state.sessionInfo,
-        userId: action.payload.userId,
-        userType: action.payload.userType,
-        sessionLoggedIn: action.payload.sessionLoggedIn,
-        sessionStarted: action.payload.sessionStarted,
+        userId: action.payload.userId || null,
+        userType: action.payload.userType || null,
+        sessionLoggedIn: !!action.payload.sessionLoggedIn,
+        sessionStarted: action.payload.sessionStarted || null,
       },
     }
   default:
