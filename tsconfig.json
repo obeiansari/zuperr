@@ -9,6 +9,15 @@
         "esModuleInterop": true,
         "baseUrl": ".",
         "paths": {
+            "@utils/*": ["src/utils/*"],
+            "@api/*": ["src/api/*"],
+            "@config/*": ["src/config/*"],
+            "@base/*": ["src/base/*"],
+            "@components/*": ["src/components/*"], 
+            "@components/ui/*": ["src/components/ui/*"], 
+            "@base-components/*": ["src/base-components/*"],
+            "@src/*": ["src/*"],
+            "@lib/*": ["lib/*"],
             "@/*": ["./*"]
         }
     },

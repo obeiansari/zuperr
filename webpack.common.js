@@ -14,14 +14,17 @@ export default {
     resolve: {
         extensions: ['.tsx', '.ts', '.jsx', '.js', '.json'],
         alias: {
-            '@utils': path.resolve(__dirname, 'src/utils'), // Adjust alias paths
+            '@utils': path.resolve(__dirname, 'src/utils'),
             '@api': path.resolve(__dirname, 'src/api'),
             '@config': path.resolve(__dirname, 'src/config'),
             '@base': path.resolve(__dirname, 'src/base'),
-            '@components': path.resolve(__dirname, './components'),
+            '@components/ui': path.resolve(__dirname, 'src/components/ui'),
+            '@base-components': path.resolve(__dirname, 'src/base-components'),
             '@src': path.resolve(__dirname, 'src/'),
+            '@lib': path.resolve(__dirname, 'lib/')
         },
     },
+    cache: false, 
     optimization: {
         usedExports: true,
         splitChunks: {
