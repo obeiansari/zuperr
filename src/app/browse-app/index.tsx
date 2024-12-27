@@ -1,9 +1,8 @@
 import React from 'react'
 import Header from '../../base-components/Header'
-// import Sidebar from '../../base-components/Sidebar'
 import PageContainer from '../../page-container'
 import { AppSidebar } from '../../base-components/Sidebar'
-import { SidebarProvider, SidebarTrigger } from '../../../components/ui/sidebar'
+import { SidebarProvider, SidebarTrigger } from '../../components/ui/sidebar'
 
 const BrowseApp: React.FC = () => (
   <>

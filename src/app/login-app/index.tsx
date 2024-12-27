@@ -2,9 +2,9 @@ import React, { useMemo, useState } from 'react'
 import { useForm } from 'react-hook-form'
 import { NavLink, useNavigate } from 'react-router-dom'
 
-import { Button } from '../../../components/ui/button'
-import { Card } from '../../../components/ui/card'
-import { Input } from '../../../components/ui/input'
+import { Button } from '../../components/ui/button'
+import { Card } from '../../components/ui/card'
+import { Input } from '../../components/ui/input'
 import { ArrowRightToLineIcon } from 'lucide-react'
 import {
   Select,
@@ -12,7 +12,7 @@ import {
   SelectValue,
   SelectContent,
   SelectItem,
-} from '../../../components/ui/select'
+} from '../../components/ui/select'
 
 interface LoginFormInputs {
   Email: string;
