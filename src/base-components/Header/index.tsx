@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { useTypedSelector } from '../../../src/redux/rootReducer'
 import { Settings, User, Menu } from 'lucide-react'
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '../../../components/ui/select'
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '../../ui/select'
 
 type TNavItem = {
   name: string;
