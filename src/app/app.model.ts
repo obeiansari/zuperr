@@ -1,9 +1,9 @@
 export interface IAppReducerState {
     sessionInfo: {
-      userId: string;
-      userType: string;
+      userId: string | null;
+      userType: string | null;
       sessionLoggedIn: boolean;
-      sessionStarted: Date | null;
+      sessionStarted: string | null;
     };
   }
 
@@ -13,7 +13,7 @@ export interface IAppSetSession {
       userId: string;
       userType: string;
       sessionLoggedIn: boolean;
-      sessionStarted: Date;
+      sessionStarted: string;
     };
   }
 

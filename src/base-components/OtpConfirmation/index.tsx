@@ -52,14 +52,26 @@ const OtpConfirmation: React.FC<IOtpConfirmationProps> = ({
 
     if (otpValue === '1234') {
       setError(null)
+      sessionStorage.setItem('userId', '1')
+      sessionStorage.setItem('userType', 'employer')
+      sessionStorage.setItem('sessionLoggedIn', 'true')
+      sessionStorage.setItem('sessionStarted', `${new Date}`)
+
+      console.log('Session Storage:', {
+        userId: sessionStorage.getItem('userId'),
+        userType: sessionStorage.getItem('userType'),
+        sessionLoggedIn: sessionStorage.getItem('sessionLoggedIn'),
+        sessionStarted: sessionStorage.getItem('sessionStarted'),
+      })
       setIsVerified(true)
       dispatch({
         type: '@@app/SET_SESSION',
         payload: {
           userId: '1',
-          userType: 'Recruiter',
+          userType: 'employer',
           sessionLoggedIn: true,
-          sessionStarted: new Date },
+          sessionStarted: new Date,
+        },
       })
       navigate('/')
       alert('OTP Verified Successfully!')
