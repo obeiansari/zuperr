@@ -1,3 +1,5 @@
+import React from 'react'
+import { NavLink } from 'react-router-dom'
 import { Home, BarChart, Users, TrendingUp } from 'lucide-react'
 import {
   Sidebar,
@@ -8,9 +10,7 @@ import {
   SidebarMenu,
   SidebarMenuButton,
   SidebarMenuItem,
-} from '../../../components/ui/sidebar'
-import React from 'react'
-import { NavLink } from 'react-router-dom'
+} from '../../components/ui/sidebar'
 
 const items = [
   {

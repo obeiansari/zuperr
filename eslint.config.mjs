@@ -24,6 +24,12 @@ export default [
     'plugin:jsx-a11y/recommended',
   ),
   {
+    settings: {
+      react: {
+        version: 'detect',
+      },
+    },
+
     plugins: {
       react,
       '@typescript-eslint': typescriptEslint,
@@ -118,6 +124,6 @@ export default [
     },
   },
   {
-    ignores: ['webpack.dev.js', 'webpack.common.js', 'webpack.prod.js'], // Replace ignorePatterns
+    ignores: ['webpack.dev.js', 'webpack.common.js', 'webpack.prod.js'],
   },
 ]
