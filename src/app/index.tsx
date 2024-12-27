@@ -1,15 +1,7 @@
 import React, { Suspense, lazy } from 'react'
 import { Routes, Route, BrowserRouter as Router, Navigate } from 'react-router-dom'
 import { useTypedSelector } from '../redux/rootReducer'
-import React, { Suspense, lazy } from 'react'
-import { Routes, Route, BrowserRouter as Router, Navigate } from 'react-router-dom'
-import { useTypedSelector } from '../redux/rootReducer'
 
-const SignIn = lazy(() => import('./login-app'))
-const SignUp = lazy(() => import('./signup-app'))
-const BrowseApp = lazy(() => import('./browse-app'))
-const SignUpOtp = lazy(() => import('./signup-app/SignUpOtp'))
-const SignInOtp = lazy(() => import('./login-app/SignInOtp'))
 const SignIn = lazy(() => import('./login-app'))
 const SignUp = lazy(() => import('./signup-app'))
 const BrowseApp = lazy(() => import('./browse-app'))
@@ -18,7 +10,6 @@ const SignInOtp = lazy(() => import('./login-app/SignInOtp'))
 
 const App: React.FC = () => {
   const sessionInfo = useTypedSelector(state => state.App.sessionInfo)
-  console.log(sessionInfo,'farhan')
   return (
     <Suspense fallback={<div>Loading...</div>}>
       <Router basename="/">
