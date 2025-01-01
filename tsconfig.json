@@ -21,6 +21,6 @@
             "@/*": ["./*"]
         }
     },
-    "include": ["index.tsx", "src/**/*.tsx", "src/**/*.ts"],
+    "include": ["index.tsx", "src/**/*.tsx", "src/**/*.ts", "global.d.ts"],
     "exclude": ["node_modules", "webpack.common.js", "webpack.dev.js"]
 }

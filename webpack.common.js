@@ -21,7 +21,7 @@ export default {
             '@components/ui': path.resolve(__dirname, 'src/components/ui'),
             '@base-components': path.resolve(__dirname, 'src/base-components'),
             '@src': path.resolve(__dirname, 'src/'),
-            '@lib': path.resolve(__dirname, 'lib/')
+            '@lib': path.resolve(__dirname, 'lib/'),
         },
     },
     cache: false, 
@@ -48,6 +48,18 @@ export default {
                 test: /\.(js|jsx)$/,
                 exclude: /node_modules/,
                 loader: 'babel-loader',
+            },
+            {
+                test: /\.(png|jpe?g|gif|svg)$/i, // Match image files
+                type: 'asset',
+                parser: {
+                    dataUrlCondition: {
+                        maxSize: 8 * 1024, // Inline images smaller than 8 KB
+                    },
+                },
+                generator: {
+                    filename: 'assets/images/[name].[hash][ext]', // Output images to a custom directory
+                },
             },
         ],
     },
