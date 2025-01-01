@@ -37,7 +37,7 @@ const Header = () => {
       label: 'ghatkoper',
     },
   ]
-  console.log(userType, 'userType')
+
   const navItems: IHeaderNavItems = {
     employee: [
       {
@@ -131,7 +131,7 @@ const Header = () => {
             <a
               key={item.name}
               href={item.link}
-              className={`text-white text-lg font-medium relative cursor-pointer 
+              className={`text-white text-lg font-normal relative cursor-pointer 
               ${
             isActive
               ? 'after:content-[""] after:absolute after:top-[138%] after:left-0 after:right-0 after:h-[3px] after:bg-white after:rounded-lg'

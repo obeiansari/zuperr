@@ -1,9 +1,10 @@
-import React, { useMemo } from 'react'
+import React from 'react'
 import { useForm } from 'react-hook-form'
 import { useNavigate } from 'react-router-dom'
 import { Button } from '../../components/ui/button'
 import { Card } from '../../components/ui/card'
 import { Input } from '../../components/ui/input'
+import leftPanelContent from '../../base-components/LoginLeftPanel'
 
 interface SignupFormInputs {
     FirstName: string;
@@ -23,26 +24,10 @@ const SignUp: React.FC = () => {
     navigate('/')
   }
 
-  const leftPanelContent = useMemo(() => (
-    <div className="relative w-full hidden md:w-1/2 bg-[#1873f2] bg-cover bg-center text-white md:flex font-['Poppins']">
-      <div className="flex flex-col justify-center md:h-[300px] lg:h-[300px] md:w-[400px] lg:w-[400px] md:ml-20 lg:ml-28 md:mt-20 lg:mt-36 border-l border-white border-opacity-50">
-        <h1 className="font-['Poppins'] font-semibold text-3xl md:text-4xl lg:!leading-[3.5rem] tracking-wider">
-                    Land the Job, That&apos;s &quot;Right for You&quot;
-        </h1>
-        <div className="flex items-center mt-14">
-          <div className="border-t border-white border-opacity-50 w-44 my-1 self-start mt-3" />
-          <div className="text-sm md:text-base font-['Poppins'] font-medium">
-                        Discover Over 130,000+ Job Opportunities with Top Companies and Emerging Startups
-          </div>
-        </div>
-      </div>
-    </div>
-  ), [])
-
   return (
     <Card className="h-full w-screen p-0 overflow-hidden font-[Poppins] rounded-none">
       <div className="flex h-full w-full flex-col md:flex-row">
-        {leftPanelContent}
+        {leftPanelContent()}
         <div className="h-full w-full md:w-1/2 flex flex-col justify-center items-center p-5 md:p-14 overflow-hidden">
 
           <h2 className="md:mt-6 text-2xl sm:text-3xl font-semibold font-['Poppins'] my-1 md:self-start">
