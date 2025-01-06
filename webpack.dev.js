@@ -42,6 +42,18 @@ const devConfig = {
                     {
                         loader: 'postcss-loader',
                     },
+                    
+                ],
+            },
+            {
+                test: /\.(png|jpe?g|gif|svg|woff|woff2|eot|ttf|otf|pdf|zip)$/i,
+                use: [
+                    {
+                        loader: 'file-loader',
+                        options: {
+                            name: '[path][name].[ext]',
+                        },
+                    },
                 ],
             },
         ],

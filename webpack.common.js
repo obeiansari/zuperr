@@ -49,6 +49,10 @@ export default {
                 exclude: /node_modules/,
                 loader: 'babel-loader',
             },
+            {
+                test: /\.(png|jpe?g|gif|svg)$/i,
+                type: 'asset/resource', // Built-in loader in Webpack 5 for handling assets
+            },
         ],
     },
     plugins: [

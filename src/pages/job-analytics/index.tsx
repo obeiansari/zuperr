@@ -9,6 +9,26 @@ import {
 } from '../../components/ui/card'
 import { CirclePlus, Ellipsis } from 'lucide-react'
 import { Button } from '../../components/ui/button'
+// import amazon from '../../assets/images/amazon.png'
+
+interface JobDetails {
+  Title: string,
+  Logo : string,
+  Location: string[],
+  Experience: string,
+  Skills: string[],
+}
+
+const JobDetails: JobDetails[] = [
+  {
+    Title: 'UX/UI',
+    Logo: 'dfdfgdf',
+    Location: ['Mumbai', 'Pune'],
+    Experience: '6-8.5 LPA',
+    Skills: ['HTML', 'CSS'],
+  },
+]
+
 const JobAnalytics = () => (
   <>
     <div className="flex flex-row">
@@ -34,10 +54,13 @@ const JobAnalytics = () => (
           <CardHeader>
             <CardTitle className="flex items-center justify-between">
               <Ellipsis/>
-              <Button variant="secondary" className="rounded-full">31-12-24</Button>
+              <Button variant="secondary" className="job-post-button"><span className="">20 May, 2023</span></Button>
             </CardTitle>
           </CardHeader>
           <hr className="border-t border-gray-300" />
+          <CardContent>
+            {/* <img src={amazon} height="75px" width="74px"/> */}
+          </CardContent>
         </Card>
       </div>
     </div>

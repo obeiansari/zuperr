@@ -91,3 +91,15 @@ body {
     @apply bg-background text-foreground;
   }
 }
+
+.job-post-button {
+  border-radius: 17.5px;
+  background-color: white;
+  border: 1px solid;
+  width: 112px;
+  height: 35px;
+  border-color: #ABABAB;
+  color: #ABABAB;
+  font-size: 12px;
+  line-height: 12px;
+}
